@@ -10,11 +10,11 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-@app.route("/")
+@app.route("tasamidinov.github.io/")
 def index():
     return render_template("books.html", books=db.execute("SELECT * FROM books"))
 
-@app.route("/cart", methods = ["POST", "GET"])
+@app.route("tasamidinov.github.io/cart", methods = ["POST", "GET"])
 def cart():
     if "cart" not in session:
         session["cart"] = []
